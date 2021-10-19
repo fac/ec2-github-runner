@@ -14,7 +14,7 @@ function buildUserDataScript(githubRegistrationToken, label) {
       'export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1',
       'export INSTANCE_ID=$(cat /var/lib/cloud/data/instance-id)',
       `./config.sh --url https://github.com/${config.githubContext.owner}/${config.githubContext.repo} --token ${githubRegistrationToken} --name "$INSTANCE_ID" --labels ${label}`,
-      './run.sh',
+      './run.sh ; shutdown -h now',
     ];
   } else {
     return [
@@ -27,7 +27,7 @@ function buildUserDataScript(githubRegistrationToken, label) {
       'export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1',
       'export INSTANCE_ID=$(cat /var/lib/cloud/data/instance-id)',
       `./config.sh --url https://github.com/${config.githubContext.owner}/${config.githubContext.repo} --token ${githubRegistrationToken} --name "$INSTANCE_ID" --labels ${label}`,
-      './run.sh',
+      './run.sh ; shutdown -h now',
     ];
   }
 }
