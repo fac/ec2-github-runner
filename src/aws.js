@@ -26,7 +26,7 @@ function buildUserDataScript(githubRegistrationToken, label) {
       'export RUNNER_ALLOW_RUNASROOT=1',
       'export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1',
       'export INSTANCE_ID=$(cat /var/lib/cloud/data/instance-id)',
-      `./config.sh --url https://github.com/${config.githubContext.owner}/${config.githubContext.repo} --ephemeral --token ${githubRegistrationToken} --name "$INSTANCE_ID" --labels ${label}`,
+      `./config.sh --url https://github.com/${config.githubContext.owner}/${config.githubContext.repo} --token ${githubRegistrationToken} --name "$INSTANCE_ID" --labels ${label} --ephemeral`,
       // "sed -i 's/\\(ExecStart=.*\\)/\\1\\nExecStopPost=\\/sbin\\/halt/' bin/actions.runner.service.template",
       // 'sudo ./svc.sh install',
       // 'sudo ./svc.sh start',
