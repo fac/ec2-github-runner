@@ -13,7 +13,7 @@ function buildUserDataScript(githubRegistrationToken, label) {
       'export RUNNER_ALLOW_RUNASROOT=1',
       'export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1',
       'export INSTANCE_ID=$(cat /var/lib/cloud/data/instance-id)',
-      `./config.sh --url https://github.com/${config.githubContext.owner}/${config.githubContext.repo} --token ${githubRegistrationToken} --name "$INSTANCE_ID" --labels ${label}`,
+      `./config.sh --url https://github.com/${config.githubContext.owner}/${config.githubContext.repo} --token ${githubRegistrationToken} --name "$INSTANCE_ID" --labels ${label} --ephemeral`,
       './run.sh ; shutdown -h now',
     ];
   } else {
@@ -26,7 +26,7 @@ function buildUserDataScript(githubRegistrationToken, label) {
       'export RUNNER_ALLOW_RUNASROOT=1',
       'export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1',
       'export INSTANCE_ID=$(cat /var/lib/cloud/data/instance-id)',
-      `./config.sh --url https://github.com/${config.githubContext.owner}/${config.githubContext.repo} --token ${githubRegistrationToken} --name "$INSTANCE_ID" --labels ${label}`,
+      `./config.sh --url https://github.com/${config.githubContext.owner}/${config.githubContext.repo} --token ${githubRegistrationToken} --name "$INSTANCE_ID" --labels ${label} --ephemeral`,
       './run.sh ; shutdown -h now',
     ];
   }
