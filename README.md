@@ -1,3 +1,7 @@
+# Unused by FreeAgent, use [machulav/ec2-github-runner](https://github.com/machulav/ec2-github-runner) instead
+
+We swtiched to using EC2 Fleets, and managing them with simpler actions
+
 # On-demand self-hosted AWS EC2 runner for GitHub Actions
 
 [![awesome-runners](https://img.shields.io/badge/listed%20on-awesome--runners-blue.svg)](https://github.com/jonico/awesome-runners)
